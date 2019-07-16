@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Button text="first button" bgColor="orange" />
-        <Button text="second button" bgColor="green" />
+        <Button text="second button" bgColor="green" borderWidth="5px" />
       </header>
     </div>
   );

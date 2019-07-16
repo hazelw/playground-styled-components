@@ -8,9 +8,17 @@ const Wrapper = styled.div`
     background: ${props => props.bgColor}
 `;
 
-const Button = ({ text, bgColor }) => (
-    <Wrapper bgColor={bgColor}>{text}</Wrapper>
-);
+const BorderedWrapper = styled(Wrapper)`
+    border: ${props => props.borderWidth ? props.borderWidth : '1px'} solid white;
+`;
+
+const Button = ({ text, bgColor, borderWidth }) => {
+    const button = borderWidth
+        ? <BorderedWrapper bgColor={bgColor} borderWidth={borderWidth}>{text}</BorderedWrapper>
+        : <Wrapper bgColor={bgColor}>{text}</Wrapper>;
+
+    return button;
+};
 
 Button.propTypes = {
     text: PropTypes.string.isRequired,
